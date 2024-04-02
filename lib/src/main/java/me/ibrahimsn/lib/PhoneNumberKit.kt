@@ -152,7 +152,7 @@ class PhoneNumberKit private constructor(
                 is State.Ready -> {}
                 is State.Attached -> {
                     if (isIconEnabled) {
-                        getFlagIcon(state.country.iso2)?.let { icon ->
+                        getFlagIcon(if (state.country.iso2 == "ca") "us" else state.country.iso2)?.let { icon ->
                             input.get()?.startIconDrawable = icon
                         }
                     }
